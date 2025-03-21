@@ -4,68 +4,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Switch Case</title>
+    <title>Switch-case</title>
 </head>
 
 <body>
     <script>
-        let dataDeHoje = new Date().getDay();
+        const dataDeHoje = new Date().getDay();
 
+        // Usando If-ElseIf-Else
+        // Programação imperativa
+        document.write('<h1>Com if-else-if:</h1>');
+        document.write('<p>');
 
         if (dataDeHoje == 0) {
-            document.write("Hoje é domingo ");
+            document.write('Hoje é domingo.');
         } else if (dataDeHoje == 1) {
-            document.write("Hoje é segunda-feira ");
+            document.write('Hoje é segunda-feira.');
         } else if (dataDeHoje == 2) {
-            document.write("Hoje é terça-feira ");
+            document.write('Hoje é terça-feira.');
         } else if (dataDeHoje == 3) {
-            document.write("Hoje é quarta-feira  ");
+            document.write('Hoje é quarta-feira.');
         } else if (dataDeHoje == 4) {
-            document.write("Hoje é quinta-feira ");
+            document.write('Hoje é quinta-feira.');
         } else if (dataDeHoje == 5) {
-            document.write("Hoje é sexta feira. ");
+            document.write('Hoje é sexta-feira.');
         } else if (dataDeHoje == 6) {
-            document.write("Hoje é sábado ");
+            document.write('Hoje é sábado.');
         } else {
-            document.write("Hoje não é um dia da semana ");
+            document.write('Hoje é um bom dia.');
         }
+
+        document.write('</p>');
+
+
+        // Usando Switch-case
+        // Programação imperativa
+
+        document.write('<h1>Com switch-case:</h1>');
+        document.write('<p>');
 
         switch (dataDeHoje) {
             case 0:
-                document.write("Hoje é domingo.");
+                document.write('Hoje é domingo.');
                 break;
             case 1:
-                document.write("Hoje é segunda-feira.");
+                document.write('Hoje é segunda-feira.');
                 break;
             case 2:
-                document.write("Hoje é terça-feira.");
+                document.write('Hoje é terça-feira.');
                 break;
             case 3:
-                document.write("Hoje é quarta-feira.");
+                document.write('Hoje é quarta-feira.');
                 break;
             case 4:
-                document.write("Hoje é quinta-feira.");
+                document.write('Hoje é quinta-feira.');
                 break;
             case 5:
-                document.write("Hoje é sexta-feira.");
+                document.write('Hoje é sexta-feira.');
                 break;
             case 6:
-                document.write("Hoje é sábado.");
+                document.write('Hoje é sábado.');
                 break;
-
+                
+            default:    
+                document.write('Hoje é um outro dia.');
         }
-        document.write(dataDeHoje);
+        
+        document.write('</p>');
+            
 
-        let diaDaSemana = (dataDeHoje == 0) ? "domingo": 
-                          (dataDeHoje == 1) ? "segunda -feira":
-                          (dataDeHoje == 2) ? "terça-feira":
-                          (dataDeHoje == 3) ? "quarta-feira":
-                          (dataDeHoje == 4) ? "quinta-feira":
-                          (dataDeHoje == 5) ? "sexta-feira":
-                          (dataDeHoje == 6) ? "sábado":
-                          "Dia da semana inválido."; 
-        document.write(" Hoje é " + diaDaSemana + ".");
+        // Usando operadores ternários
+        // Programação imperativa
 
+        document.write('<h1>Com operador ternário:</h1>');
+
+        const diaDaSemana = (dataDeHoje == 0) ? "domingo" :
+                            (dataDeHoje == 1) ? "segunda-feira" :
+                            (dataDeHoje == 2) ? "terça-feira" :
+                            (dataDeHoje == 3) ? "quarta-feira" :
+                            (dataDeHoje == 4) ? "quinta-feira" :
+                            (dataDeHoje == 5) ? "sexta-feira" :
+                            (dataDeHoje == 6) ? "sábado" :
+                            "dia da semana inválido";
+        
+        document.write('<p>Hoje é ' + diaDaSemana, '.</p>');
+
+        // Usando um array
+        // Programação declarativa
+
+        document.write('<h1>Com um array</h1>');
+
+        const diasDaSemana = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+
+        document.write('<p>Hoje é ' + diasDaSemana[dataDeHoje] + '.</p>');
+
+
+        // Usando um mapa
+        // Programação declarativa
+
+        document.write('<h1>Com Mapa (Map)</h1>');
+        const mapaDeDias = new Map([
+            [0, 'domingo'], 
+            [2, 'terça-feira'],
+            [1, 'segunda-feira'],
+            [4, 'quinta-feira'],
+            [3, 'quarta-feira'],
+            [5, 'sexta-feira'],
+            [6, 'sábado']
+        ]);
+
+        // Vantagens: 
+        // - posso declarar os valores fora de ordem
+        // - não fica associado a um índice que inicia em 0
+
+        document.write('<p>Hoje é ' + mapaDeDias.get(dataDeHoje) + '.</p>');
 
     </script>
 </body>
